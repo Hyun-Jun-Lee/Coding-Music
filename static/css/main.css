@@ -1,0 +1,14 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: LightGray;
+}
+
+.bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+ 
+}

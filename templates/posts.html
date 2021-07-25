@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+<!-- {% block head %}
+<title>Music list</title>
+{% endblock %} -->
+
+{% block body %}
+<br>
+<div>
+<h1 style ="fontsize= 32px">코.듣.뮤</h1>
+<!-- <a class="btn btn-success float-right" href="/posts/new" >+ New posts</a> -->
+</div>
+
+<hr>
+<h2>듣고 싶은 음악을 추가하세요!</h2>
+<form action='/posts' method='POST'>
+
+    <label for="Title">Song</label>
+    <input class="form-control" type="text" name='title' id='title' placeholder="enter Title" aria-label="Enter title">
+    <br>
+
+    <label for="Author">Artist</label>
+    <input class="form-control" type="text" name='author' id='author' placeholder="artisit name"
+        aria-label="Enter title">
+    <br>
+
+    <label for="Content">URL</label>
+    <textarea class="form-control" name='content' id='content' placeholder="youtube URL" rows="1"></textarea>
+    
+    <br>
+    <input type='submit' value='Post'>
+</form>
+
+</hr>
+
+<table class="table">
+{% for post in posts%}
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><a href = {{post.content}}>{{ post.title }}</a></th>
+      <th scope="col">{{post.author}}</th>
+      <th scope="col"><a class="btn btn-danger" href='/posts/delete/{{post.id}}'>Delete</a> </th>
+      <th scope="col"><a class="btn btn-primary" href='/posts/edit/{{post.id}}'>Edit</a> </th>
+    </tr>
+  </thead>
+
+{% endfor%}
+
+{% endblock %}
