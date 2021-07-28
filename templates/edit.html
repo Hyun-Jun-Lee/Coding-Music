@@ -1,34 +1,33 @@
-{% extends 'posts.html' %}
+{% extends 'base.html' %}
 
 {% block head %} 
 <title>EDIT</title>
 {% endblock %}
 
 {% block body %} 
-<body>
+<h1 style ="fontsize= 32px;">코.듣.뮤</h1>
+<hr>
+<h2>Edit</h2>
 
-    <h1 style ="fontsize= 32px;">코.듣.뮤</h1>
-    <hr>
-    <h2>Edit</h2>
+<form  action='/posts/edit/{{post.id}}' method='POST'>
 
-    <form action='/posts/edit/{{post.id}}' method='POST'>
+    <label for="Title">Song</label>
+    <input class="form-control" type="text" name='title' id='title' placeholder="enter Title" aria-label="Enter title", value="{{post.title}}">
+    <br>
 
-        <label for="Title">Song</label>
-        <input class="form-control" type="text" name='title' id='title' placeholder="enter Title" aria-label="Enter title", value="{{post.title}}">
-        <br>
+    <label for="Author">Artist</label>
+    <input class="form-control" type="text" name='author' id='author' placeholder="enter Title"
+        aria-label="Enter title", value = "{{post.author}}">
+    <br>
+
+    <label for="Content">URL</label>
+    <textarea class="form-control" name='content' id='content' rows="3">{{post.content}}</textarea>
     
-        <label for="Author">Artist</label>
-        <input class="form-control" type="text" name='author' id='author' placeholder="enter Title"
-            aria-label="Enter title", value = "{{post.author}}">
-        <br>
-    
-        <label for="Content">URL</label>
-        <textarea class="form-control" name='content' id='content' rows="3">{{post.content}}</textarea>
-        
-        <br>
-        <input type='submit' value='Save'>
-    </form>
-    </hr>
-</body>
+    <br>
+    <input type='submit' value='Save'>
+</form>
+
+</hr>
+
 {% endblock %}
 
