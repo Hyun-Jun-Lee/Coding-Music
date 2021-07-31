@@ -7,3 +7,7 @@
 - 평소 코딩 할 때 듣는 음악 플레이 리스트를 만들어 주는 서비스 구현
 
 - 해당 곡 Youtube 링크 기입 하여 연결 되도록 구현
+
+
+
+![image](https://user-images.githubusercontent.com/76996686/127736963-70eb7e0f-a3d7-40a7-a529-f3b0f2ba231e.png)
